@@ -5,20 +5,20 @@
 class Tq < Formula
   desc "tq is a portable command-line JSON/YAML processor."
   homepage "https://github.com/jarxorg/tree#tq"
-  version "0.6.3"
+  version "0.7.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.6.3/tree_0.6.3_Darwin_x86_64.tar.gz"
-      sha256 "aa3481a2b2a035f948589d3243747082b7f176d6b9dc9302e3f2d53ccfa7cb83"
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.0/tree_0.7.0_Darwin_x86_64.tar.gz"
+      sha256 "14c8a20092bdee503897e991b6c86d545c2d8dfc4506a9ac3794fcc8fa4c46d2"
 
       def install
         bin.install "tq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jarxorg/tree/releases/download/v0.6.3/tree_0.6.3_Darwin_arm64.tar.gz"
-      sha256 "07287e36add29bab8591f67dfe64ba71e2cb17fb991451248b3b3c36449d9b1c"
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.0/tree_0.7.0_Darwin_arm64.tar.gz"
+      sha256 "3a1d96a0236b52874134d8a2734eacfa5879f12e91069126a8cd8c919ef816d4"
 
       def install
         bin.install "tq"
@@ -28,16 +28,16 @@ class Tq < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.6.3/tree_0.6.3_Linux_x86_64.tar.gz"
-      sha256 "b9cf94f7ca35d2330e74343170595818eec9b3498b42548c12b1d47c033eae75"
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.0/tree_0.7.0_Linux_x86_64.tar.gz"
+      sha256 "0b3ff69b040f3d910b01eb828864e165024b552540baf3a0f8da3a9a532d0c36"
 
       def install
         bin.install "tq"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jarxorg/tree/releases/download/v0.6.3/tree_0.6.3_Linux_arm64.tar.gz"
-      sha256 "e0a40948fea7f4efd5aa64e1082128cd1ee1599298a81dc0bfc305f70de62ca2"
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.0/tree_0.7.0_Linux_arm64.tar.gz"
+      sha256 "6c1d45e89c948db32d39ddcc5f20f0fbcd2b6300ccf61bed2163f75be990bf1e"
 
       def install
         bin.install "tq"
