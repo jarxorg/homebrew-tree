@@ -5,20 +5,20 @@
 class Tq < Formula
   desc "tq is a portable command-line JSON/YAML processor."
   homepage "https://github.com/jarxorg/tree#tq"
-  version "0.7.1"
+  version "0.7.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.1/tree_0.7.1_Darwin_x86_64.tar.gz"
-      sha256 "892b89fc95a1319209c5aa0868c7c840221d781f6652b8104305bc3bccad62a0"
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Darwin_x86_64.tar.gz"
+      sha256 "28af213a5232cb9eca6efb5d979903230c218b5764984b9380ab270c041bdc7b"
 
       def install
         bin.install "tq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.1/tree_0.7.1_Darwin_arm64.tar.gz"
-      sha256 "fef75ebe557a2da0741ebff77586a16ccf9076f5e42249afa5b5456ffd1b7d58"
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Darwin_arm64.tar.gz"
+      sha256 "59b61400936e7bf54f6e4eb29b8ef96ffcf043f6327d28bf9fc379226e3aef63"
 
       def install
         bin.install "tq"
@@ -27,17 +27,17 @@ class Tq < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.1/tree_0.7.1_Linux_x86_64.tar.gz"
-      sha256 "c9c9478b2325931e8b835a89d542ffc8d8e5bd33c4042411f7bcacd9eb24ea83"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_arm64.tar.gz"
+      sha256 "7c3cda13315fb120a2c71813b70481f34be0ff82e7ac17362bdbae2e8583a27c"
 
       def install
         bin.install "tq"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.1/tree_0.7.1_Linux_arm64.tar.gz"
-      sha256 "9876087cc2f3f71a0911a378aa2c37decb86ce3fd2d534a80e92c001d418ff22"
+    if Hardware::CPU.intel?
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_x86_64.tar.gz"
+      sha256 "b3e8e1bf8728e543285182fbd78916e92efb20c1c82fd9146bcb009774215f3d"
 
       def install
         bin.install "tq"
