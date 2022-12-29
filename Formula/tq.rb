@@ -10,7 +10,7 @@ class Tq < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Darwin_x86_64.tar.gz"
-      sha256 "28af213a5232cb9eca6efb5d979903230c218b5764984b9380ab270c041bdc7b"
+      sha256 "dd6bb3365f8510ca1beb5dda8e7fa80824abb3332569c4ad27427b2b2765dd50"
 
       def install
         bin.install "tq"
@@ -18,7 +18,7 @@ class Tq < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Darwin_arm64.tar.gz"
-      sha256 "59b61400936e7bf54f6e4eb29b8ef96ffcf043f6327d28bf9fc379226e3aef63"
+      sha256 "3f05d582310e07e6d91f1710d678a88e77544f3db0ae324ccea94a3b48aafddd"
 
       def install
         bin.install "tq"
@@ -27,17 +27,17 @@ class Tq < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_arm64.tar.gz"
-      sha256 "7c3cda13315fb120a2c71813b70481f34be0ff82e7ac17362bdbae2e8583a27c"
+    if Hardware::CPU.intel?
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_x86_64.tar.gz"
+      sha256 "d4c31b620abb800b75be947d150498c86c4e2933bf68fde655c851b935675636"
 
       def install
         bin.install "tq"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_x86_64.tar.gz"
-      sha256 "b3e8e1bf8728e543285182fbd78916e92efb20c1c82fd9146bcb009774215f3d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_arm64.tar.gz"
+      sha256 "09254a4e582616e32d05e6bf6096349ba6e62c5fc14cda2af6ed799ad7a72892"
 
       def install
         bin.install "tq"
