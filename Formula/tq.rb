@@ -5,20 +5,20 @@
 class Tq < Formula
   desc "tq is a portable command-line JSON/YAML processor."
   homepage "https://github.com/jarxorg/tree#tq"
-  version "0.7.2"
+  version "0.8.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Darwin_x86_64.tar.gz"
-      sha256 "dd6bb3365f8510ca1beb5dda8e7fa80824abb3332569c4ad27427b2b2765dd50"
+    if Hardware::CPU.arm?
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Darwin_arm64.tar.gz"
+      sha256 "89d0131dd1fe2b8efdb206f5aab40c8ff0bae15241de82d717cbcc62414a1936"
 
       def install
         bin.install "tq"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Darwin_arm64.tar.gz"
-      sha256 "3f05d582310e07e6d91f1710d678a88e77544f3db0ae324ccea94a3b48aafddd"
+    if Hardware::CPU.intel?
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Darwin_x86_64.tar.gz"
+      sha256 "05c987b542830f9b592ccf9e0d2c307f05fee680d53f2ab2a53dfec76191764b"
 
       def install
         bin.install "tq"
@@ -28,16 +28,16 @@ class Tq < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_x86_64.tar.gz"
-      sha256 "d4c31b620abb800b75be947d150498c86c4e2933bf68fde655c851b935675636"
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Linux_x86_64.tar.gz"
+      sha256 "b4fdf4acdb17871d549483b80f6d2c8a816d5fb7af7ed6faee0ef7e4c9450fbe"
 
       def install
         bin.install "tq"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jarxorg/tree/releases/download/v0.7.2/tree_0.7.2_Linux_arm64.tar.gz"
-      sha256 "09254a4e582616e32d05e6bf6096349ba6e62c5fc14cda2af6ed799ad7a72892"
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Linux_arm64.tar.gz"
+      sha256 "acdd8ac36e6bda08d62f2c152857193065d9c8884c2615e98c94103fec1856bd"
 
       def install
         bin.install "tq"
