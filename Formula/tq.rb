@@ -5,20 +5,20 @@
 class Tq < Formula
   desc "tq is a portable command-line JSON/YAML processor."
   homepage "https://github.com/jarxorg/tree#tq"
-  version "0.8.0"
+  version "0.8.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Darwin_arm64.tar.gz"
-      sha256 "89d0131dd1fe2b8efdb206f5aab40c8ff0bae15241de82d717cbcc62414a1936"
+    if Hardware::CPU.intel?
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.2/tree_0.8.2_darwin_amd64.tar.gz"
+      sha256 "4f9d4fe076321eedf4cf602c9985f5f1ade73b04d72a7bf8561f77f24cb3e22a"
 
       def install
         bin.install "tq"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Darwin_x86_64.tar.gz"
-      sha256 "05c987b542830f9b592ccf9e0d2c307f05fee680d53f2ab2a53dfec76191764b"
+    if Hardware::CPU.arm?
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.2/tree_0.8.2_darwin_arm64.tar.gz"
+      sha256 "c9a5159e8ba5f1d513214cae492d511abfeec191f3b17ad7ed4f543d557e69a5"
 
       def install
         bin.install "tq"
@@ -27,25 +27,19 @@ class Tq < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Linux_x86_64.tar.gz"
-      sha256 "b4fdf4acdb17871d549483b80f6d2c8a816d5fb7af7ed6faee0ef7e4c9450fbe"
-
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.2/tree_0.8.2_linux_amd64.tar.gz"
+      sha256 "58251da7243209a38cbedd5fba69619d4d1087aedb0ce3a0539299fb69a59bfc"
       def install
         bin.install "tq"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jarxorg/tree/releases/download/v0.8.0/tree_0.8.0_Linux_arm64.tar.gz"
-      sha256 "acdd8ac36e6bda08d62f2c152857193065d9c8884c2615e98c94103fec1856bd"
-
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/jarxorg/tree/releases/download/v0.8.2/tree_0.8.2_linux_arm64.tar.gz"
+      sha256 "40400a2bcab051d72fe3849b49084b6c48f2d2b82dcacb707b40b2e9d25ea5de"
       def install
         bin.install "tq"
       end
     end
-  end
-
-  test do
-    system "#{bin}/tq --help"
   end
 end
